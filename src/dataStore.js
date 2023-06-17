@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx';
+import { observable } from 'mobx';
 
 class DataStore {
   data = observable([]);
@@ -8,7 +8,6 @@ class DataStore {
       const response = await fetch('./src/game-data.json');
       const jsonData = await response.json();
       this.data.replace(jsonData);
-      console.log(jsonData[0]);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
