@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { observer } from 'mobx-react';
 import dataStore from './dataStore';
+import './App.css';
 
 const App = observer(() => {
   useEffect(() => {
@@ -8,9 +9,9 @@ const App = observer(() => {
   }, []);
 
   return (
-    <>
+    <div className="container">
       {dataStore.data.map((item) => (
-        <div key={item.id}>
+        <div key={item.id} className="card">
           <p>Title: {item.title}</p>
           <p>Provider: {item.providerName}</p>
           {item.thumb && item.thumb.url && (
@@ -18,7 +19,7 @@ const App = observer(() => {
           )}
         </div>
       ))}
-    </>
+    </div>
   );
 });
 
