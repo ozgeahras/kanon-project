@@ -3,6 +3,7 @@ import { observer } from 'mobx-react';
 import dataStore from './dataStore';
 import SearchBox from './SearchBox';
 import Card from './Card';
+import NavBar from './NavBar';
 import './App.css';
 
 const App = observer(() => {
@@ -25,6 +26,7 @@ const App = observer(() => {
 
   return (
     <div className="container">
+      <NavBar />
       <SearchBox handleSearch={handleSearch} />
       <div className="card-container">
         {renderData.map((item) => (
