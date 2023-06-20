@@ -1,0 +1,21 @@
+.card {
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card p {
+  margin: 0;
+  font-size: 16px;
+  color: white;
+}
+
+.card img {
+  max-width: 80%;
+  border-radius: 0.5rem;
+}
