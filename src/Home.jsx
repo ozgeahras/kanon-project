@@ -5,17 +5,21 @@ import SearchBox from './SearchBox';
 import Card from './Card';
 
 const Home = observer(() => {
+  // State variables for filtered data and search query
   const [filteredData, setFilteredData] = useState([]);
   const [query, setQuery] = useState('');
 
+  // Handle search input and update filtered data
   const handleSearch = (query) => {
     setQuery(query);
+    // Filter data based on search query
     const filtered = dataStore.data.filter((item) =>
       item.title.toLowerCase().includes(query.toLowerCase())
     );
     setFilteredData(filtered);
   };
 
+  // Determine which data to render based on search query
   const renderData = query ? filteredData : dataStore.data;
 
   return (

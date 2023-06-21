@@ -4,6 +4,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './SearchBox.css';
 
 function SearchBox({ handleSearch }) {
+  // Handle input change and pass the query to the parent component
   const handleInputChange = (event) => {
     const query = event.target.value;
     handleSearch(query);
