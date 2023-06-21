@@ -3,8 +3,8 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['airbnb', 'prettier'],
-  plugins: 'prettier',
+  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  plugins: ['prettier'],
   overrides: [
     {
       env: {
@@ -17,10 +17,19 @@ module.exports = {
     },
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
+    ecmaVersion: 2021,
     sourceType: 'module',
   },
   rules: {
     'prettier/prettier': 'error',
+    'no-unused-vars': [
+      'error',
+      {
+        varsIgnorePattern: '^_',
+        argsIgnorePattern: '^_',
+      },
+    ],
+    'no-undef': 'off',
+    'no-restricted-globals': 'off',
   },
 };
