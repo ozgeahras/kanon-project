@@ -1,1 +1,1 @@
-web: npm run build && npm run start -- --timeout=120
+web: npm run build && npm run start
